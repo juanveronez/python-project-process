@@ -14,7 +14,9 @@ dependencies = [
     "taskipy (>=1.14.1,<2.0.0)",
     "isort (>=6.0.0,<7.0.0)",
     "blue (>=0.9.1,<0.10.0)",
-    "mkdocs (>=1.6.1,<2.0.0)"
+    "mkdocs (>=1.6.1,<2.0.0)",
+    "streamlit (>=1.42.0,<2.0.0)",
+    "selenium (>=4.28.1,<5.0.0)"
 ]
 
 [tool.poetry]
@@ -25,7 +27,7 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
-run = "python app"
+run = "streamlit run src/app.py"
 lint = "isort . && blue ."
 test = "python -m pytest -v "
 doc = "mkdocs serve"
