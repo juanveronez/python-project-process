@@ -37,12 +37,16 @@ def generate_invalid_key_value():
     return selected_key, selected_value
 
 
+def sale_to_dict(sale: Sale) -> dict[str, any]:
+    return {**sale.model_dump(), 'category': sale.category.value}
+
+
 def corrupt_sale(sale: Sale):
     selected_key, selected_value = generate_invalid_key_value()
+    sale_data = sale_to_dict(sale)
 
     return {
-        **sale.model_dump(),
-        'category': sale.category.value,
+        **sale_data,
         selected_key: selected_value,
     }
 
@@ -53,12 +57,10 @@ def generate_sales_list(n: int, valid: bool = True):
         sale_data = generate_sale()
         sale = Sale(**sale_data)
 
-        if not valid and random.randint(0, 9) % 2 == 0:
-            sales_data.append(corrupt_sale(sale))
-        else:
-            sales_data.append(
-                {**sale.model_dump(), 'category': sale.category.value}
-            )
+        invalid_sale_case = not valid and random.randint(0, 9) % 2 == 0
+        sales_data.append(
+            corrupt_sale(sale) if invalid_sale_case else sale_to_dict(sale)
+        )
     return sales_data
 
 
