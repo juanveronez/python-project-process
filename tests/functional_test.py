@@ -2,7 +2,7 @@ import subprocess
 from time import sleep
 
 import pytest
-from selenium.webdriver import Chrome, ChromeOptions
+from selenium.webdriver import Firefox, FirefoxOptions
 from selenium.webdriver.chrome.webdriver import WebDriver
 
 
@@ -10,9 +10,9 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 def driver():
     process = subprocess.Popen(['task', 'run'])
 
-    options = ChromeOptions()
+    options = FirefoxOptions()
     options.headless = True
-    driver = Chrome(options=options)
+    driver = Firefox(options=options)
 
     driver.set_page_load_timeout(5)
     yield driver
