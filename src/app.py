@@ -1,5 +1,6 @@
-from frontend import ExcelValidationUI
 from backend import process_excel
+from frontend import ExcelValidationUI
+
 
 def main():
     ui = ExcelValidationUI()
@@ -10,5 +11,6 @@ def main():
         errors, _ = process_excel(uploaded_file)
         ui.display_result(errors)
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     main()
