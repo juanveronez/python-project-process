@@ -7,7 +7,7 @@ def main():
 
     uploaded_file = ui.upload_file()
     if uploaded_file:
-        errors = process_excel(uploaded_file)
+        errors, _ = process_excel(uploaded_file)
         ui.display_result(errors)
 
 if __name__ == "__main__":
