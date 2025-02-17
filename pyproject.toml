@@ -31,6 +31,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.taskipy.tasks]
 run = "streamlit run src/app.py"
 lint = "isort . && blue ."
-test = "python -m pytest -v "
+test = "python -m pytest tests/unit_tests -v"
+test_all = "python -m pytest tests"
 doc = "mkdocs serve"
 fake_sales = "python -m src.utils.fake_sales"
