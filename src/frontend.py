@@ -22,3 +22,9 @@ class ExcelValidationUI:
                 st.error(f'Error on validation: {error}')
         else:
             st.success('Excel validated, it follows the schema!')
+
+    def display_save_db(self):
+        return st.button("Save on Database")
+    
+    def display_success(self):
+        return st.success("Successfully save data on database!")

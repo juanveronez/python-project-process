@@ -1,7 +1,5 @@
-from sqlalchemy import Column, Date, Enum, Float, Integer, String
+from sqlalchemy import Column, Date, Float, Integer, String
 from sqlalchemy.orm import DeclarativeBase, declarative_base
-
-from src.contracts import SaleCategory
 
 Base: DeclarativeBase = declarative_base()
 
@@ -15,4 +13,4 @@ class SaleModel(Base):
     price = Column(Float, nullable=False)
     product = Column(String, nullable=False)
     quantity = Column(Integer, nullable=False)
-    category = Column(Enum(SaleCategory), nullable=False)
+    category = Column(String, nullable=False)
