@@ -1,6 +1,6 @@
 import pandas as pd
 
-from contracts import Sale
+from src.contracts import Sale
 
 
 def process_excel(uploaded_file) -> tuple[list[str], pd.DataFrame | None]:

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Date, Enum, Float, Integer, String
 from sqlalchemy.orm import DeclarativeBase, declarative_base
 
-from contracts import SaleCategory
+from src.contracts import SaleCategory
 
 Base: DeclarativeBase = declarative_base()
 

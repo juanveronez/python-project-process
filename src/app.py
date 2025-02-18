@@ -1,8 +1,6 @@
-from backend import process_excel
-
-# from models import SaleModel
-from database import create_session
-from frontend import ExcelValidationUI
+from src.backend import process_excel
+from src.database import create_session
+from src.frontend import ExcelValidationUI
 
 
 def main():
@@ -16,6 +14,4 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-    session = create_session()
-    # print(session.query(SaleModel).all())
+    main()

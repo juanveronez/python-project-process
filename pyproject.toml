@@ -34,9 +34,9 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
-run = "streamlit run src/app.py"
+run = "python -m streamlit run src/app.py"
 lint = "isort . && blue ."
 test = "python -m pytest tests/unit_tests -v"
-test_all = "python -m pytest tests"
+test_all = "python -m pytest"
 doc = "mkdocs serve"
 fake_sales = "python -m src.utils.fake_sales"
