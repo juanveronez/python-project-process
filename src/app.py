@@ -1,5 +1,5 @@
-from src.backend import process_excel, save_df_on_sql
-from src.frontend import ExcelValidationUI
+from backend import process_excel, save_df_on_sql
+from frontend import ExcelValidationUI
 
 def main():
     ui = ExcelValidationUI()

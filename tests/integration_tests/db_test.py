@@ -1,5 +1,5 @@
 from pandas import read_sql_table
-from src.database import get_database_url
+from database import get_database_url
 
 db_url = get_database_url()
 

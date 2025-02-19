@@ -4,7 +4,7 @@ from datetime import date, timedelta
 import pandas as pd
 from faker import Faker
 
-from src.contracts import Sale, SaleCategory
+from contracts import Sale, SaleCategory
 
 fake = Faker()
 

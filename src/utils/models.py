@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Column, Date, Float, Integer, String
 from sqlalchemy.orm import DeclarativeBase, declarative_base
 
-from src.database import get_database_url
+from database import get_database_url
 
 Base: DeclarativeBase = declarative_base()
 

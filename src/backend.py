@@ -1,7 +1,7 @@
 import pandas as pd
 
-from src.contracts import Sale
-from src.database import get_database_url
+from contracts import Sale
+from database import get_database_url
 
 
 def process_excel(uploaded_file) -> tuple[list[str], pd.DataFrame | None]:
