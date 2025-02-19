@@ -3,7 +3,7 @@ from datetime import date
 from pydantic import ValidationError
 from pytest import raises
 
-from src.contracts import Sale
+from contracts import Sale
 
 
 def test_sales_with_valid_data():
