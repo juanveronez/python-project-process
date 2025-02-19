@@ -1,10 +1,6 @@
 import os
 
 from dotenv import load_dotenv
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-
-from src.models import Base
 
 
 def get_database_url():
@@ -18,13 +14,3 @@ def get_database_url():
 
     url = f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
     return url
-
-
-def create_session():
-    url = get_database_url()
-    engine = create_engine(url)
-
-    Base.metadata.create_all(bind=engine)
-    LocalSession = sessionmaker(bind=engine, autoflush=False, autocommit=False)
-
-    return LocalSession()

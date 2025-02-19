@@ -1,5 +1,7 @@
-from sqlalchemy import Column, Date, Float, Integer, String
+from sqlalchemy import create_engine, Column, Date, Float, Integer, String
 from sqlalchemy.orm import DeclarativeBase, declarative_base
+
+from src.database import get_database_url
 
 Base: DeclarativeBase = declarative_base()
 
@@ -14,3 +16,12 @@ class SaleModel(Base):
     product = Column(String, nullable=False)
     quantity = Column(Integer, nullable=False)
     category = Column(String, nullable=False)
+
+def create_models():
+    url = get_database_url()
+    engine = create_engine(url)
+
+    Base.metadata.create_all(bind=engine)
+
+if __name__ == "__main__":
+    create_models()

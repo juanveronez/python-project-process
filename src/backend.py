@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.contracts import Sale, SaleCategory
+from src.contracts import Sale
 from src.database import get_database_url
 
 
