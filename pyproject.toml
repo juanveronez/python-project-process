@@ -20,7 +20,10 @@ dependencies = [
     "faker (>=36.1.1,<37.0.0)",
     "openpyxl (>=3.1.5,<4.0.0)",
     "mkdocstrings[python] (>=0.28.1,<0.29.0)",
-    "mkdocs-material (>=9.6.4,<10.0.0)"
+    "mkdocs-material (>=9.6.4,<10.0.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)"
 ]
 
 [tool.poetry]
@@ -31,9 +34,10 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
-run = "streamlit run src/app.py"
+run = "python -m streamlit run src/app.py"
 lint = "isort . && blue ."
 test = "python -m pytest tests/unit_tests -v"
-test_all = "python -m pytest tests"
+test_all = "python -m pytest"
 doc = "mkdocs serve"
 fake_sales = "python -m src.utils.fake_sales"
+create_models = "python -m src.utils.models"

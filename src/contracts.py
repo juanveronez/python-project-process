@@ -23,6 +23,7 @@ class Sale(BaseModel):
         categoria (str): categoria do produto
 
     """
+
     email: EmailStr
     date: date
     price: PositiveFloat
